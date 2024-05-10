@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 
-//@Entity(name="user_details")
+@Entity(name="user_details")
 public class User {
 	
 	public User(int id, String name, LocalDate birthDate) {
@@ -20,8 +20,8 @@ public class User {
 		this.birthDate = birthDate;
 	}
 	
-//	@Id
-//	@GeneratedValue
+	@Id
+	@GeneratedValue
 	private int id;
 	
 	@Size(min=2, message = "Name should have atleast 2 characters") //annotation from validation to check if a minimum of 2 character has been entered

@@ -2,6 +2,8 @@ package com.khunwana.rest.webservices.restfulwebservices.user;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -23,9 +25,11 @@ public class User {
 	private int id;
 	
 	@Size(min=2, message = "Name should have atleast 2 characters") //annotation from validation to check if a minimum of 2 character has been entered
+	@JsonProperty("user_name") //customizing field response
 	private String name;
 	
 	@Past(message = "Birth date should always be in the past") //annotation to check if the date entered is in the past of current date
+	@JsonProperty("Birth_Date")
 	private LocalDate birthDate;
 	public int getId() {
 		return id;

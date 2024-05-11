@@ -12,6 +12,9 @@ import jakarta.validation.constraints.Size;
 
 @Entity(name="user_details")
 public class User {
+	protected User() {
+		
+	}
 	
 	public User(int id, String name, LocalDate birthDate) {
 		super();
@@ -25,11 +28,11 @@ public class User {
 	private int id;
 	
 	@Size(min=2, message = "Name should have atleast 2 characters") //annotation from validation to check if a minimum of 2 character has been entered
-	@JsonProperty("user_name") //customizing field response
+//	@JsonProperty("user_name") //customizing field response
 	private String name;
 	
 	@Past(message = "Birth date should always be in the past") //annotation to check if the date entered is in the past of current date
-	@JsonProperty("Birth_Date")
+//	@JsonProperty("Birth_Date")
 	private LocalDate birthDate;
 	public int getId() {
 		return id;

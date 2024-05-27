@@ -27,6 +27,7 @@ public class SpringSecurityConfiguration {
 		//---disabling csrf
 		http.csrf().disable();
 		//---/disabling csrf
+		http.cors(withDefaults());
 		
 		
 		return http.build();

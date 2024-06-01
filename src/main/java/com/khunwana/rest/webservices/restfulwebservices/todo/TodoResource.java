@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -40,14 +41,14 @@ public class TodoResource {
 	}
 	
 	@PutMapping("/users/{username}/todos/{id}")
-	public void updateTo_DO(@PathVariable String username ,@PathVariable int id)
-	{
-		
+	public Todo updateTo_DO(@PathVariable String username ,@PathVariable int id,@RequestBody Todo todo) {
+		to_doService.updateTodo(todo);
+		return todo;
 	}
 	
 	@PostMapping("/users/{username}/todos")
-	public void createTo_Do(@PathVariable String username)
-	{
-		
+	public Todo createTo_Do(@PathVariable String username,@RequestBody Todo todo) {
+		Todo created_ToDo = to_doService.addnewTodo(username, todo.getDescription(), todo.getTargetDate(), todo.isDone());
+		return created_ToDo;
 	}
 }

@@ -21,6 +21,12 @@ public class TodoResource {
 		this.to_doService = to_doService;
 	}
 	
+	@GetMapping(path="/basicAuth")
+	public String basicAuth()
+	{
+		return "Success";
+	}
+	
 	@GetMapping("/users/{username}/todos")
 	public List<Todo> retrieveTo_Do(@PathVariable String username)
 	{

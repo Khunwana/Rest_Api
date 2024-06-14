@@ -1,16 +1,14 @@
-insert into user_details(birth_date,id,name)
-values(current_date(),10001,'Monias');
-insert into user_details(birth_date,id,name)
-values(current_date(),10002,'Nqobizitha');
-insert into user_details(birth_date,id,name)
-values(current_date(),10003,'Khunwana');
+--insert into user_details(birth_date,id,name)
+--values(current_date(),1234567892,'Nqobizithsa1');
 
-insert into post(id,user_id,description)
-values(20001,10001,'testing 1');
-insert into post(id,user_id,description)
-values(20002,10001,'testing 2');
+--insert into todo(id,username,description,target_date,done)
+--values(1000000001,'testing','testing',current_date(),false);
 
-insert into post(id,user_id,description)
-values(20003,10002,'testing 3');
-insert into post(id,user_id,description)
-values(20004,10002,'testing 4');
+--insert into todo(id,username,description,target_date,done)
+--values(1,'Khunwana','Learning Aws',current_date(),false);
+--
+--insert into todo(id,username,description,target_date,done)
+--values(2,'Khunwana','Learning Springboot',current_date(),false);
+
+insert into todo(id,username,description,target_date,done)
+values(3,'Khunwana','Learning Java',current_date(),false);

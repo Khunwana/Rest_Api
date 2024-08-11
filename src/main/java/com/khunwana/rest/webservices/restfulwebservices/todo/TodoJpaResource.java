@@ -30,6 +30,12 @@ public class TodoJpaResource {
 	{
 		return "Success";
 	}
+
+//	@GetMapping(path="/")
+//	public String homeRouting()
+//	{
+//		return "home";
+//	}
 	
 	@GetMapping("/users/{username}/todos")
 	public List<Todo> retrieveTo_Do(@PathVariable String username)

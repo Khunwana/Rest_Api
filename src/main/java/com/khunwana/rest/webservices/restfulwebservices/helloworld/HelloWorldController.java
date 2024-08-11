@@ -25,6 +25,11 @@ public class HelloWorldController {
 		return "Hello World";
 	}
 	
+	@GetMapping(path = "/") //#CHANGE
+	public String returnSomethingAtRootUrl() {
+		return "Congratulations!"; 
+	}
+	
 	@GetMapping(path="/hello-world-bean")
 	public HelloWorldBean helloWorldBean()
 	{

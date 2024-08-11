@@ -25,7 +25,7 @@ public class RestfulWebServicesApplication {
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")  //enbaling mapping for all
 					.allowedMethods("*") //specifying all methods are allowes  types of methods POST,GET 
-					.allowedOrigins("http://localhost:3000");
+					.allowedOrigins("*");
 			}
 		};
 	}

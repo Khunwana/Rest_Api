@@ -22,7 +22,8 @@ public class SpringSecurityConfiguration {
 				
 		//---authorizing all request
 		http.authorizeHttpRequests(
-				auth -> auth.anyRequest().authenticated()
+				auth -> auth.requestMatchers("/").permitAll()
+							.anyRequest().authenticated()
 				)
 		//---/authorizing all request
 		

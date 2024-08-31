@@ -37,19 +37,26 @@ public class SpringSecurityConfiguration {
 		
 		//-----------------------------------------------------------------------
 			
-		//---/configuring stateless session 
+		//---/configuring stateless session   
 			.sessionManagement(
 				session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		)
 		
 		
 		//---disabling csrf
-			.csrf().disable()
+			.csrf(httpSecurityCsrfConfigurer -> httpSecurityCsrfConfigurer.disable())
+			.headers(httpSecurityHeadersConfigurer -> {
+			     httpSecurityHeadersConfigurer.frameOptions(frameOptionsConfig -> {
+			                    frameOptionsConfig.disable();
+			     });
+			})
+			
 		//---/disabling csrf
 			.cors(withDefaults())
+			
 		
-		
-			.build();
+			.build()
+			;
 	}
 	
 	

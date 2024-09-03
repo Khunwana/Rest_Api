@@ -2,23 +2,29 @@ package com.khunwana.rest.webservices.restfulwebservices.homepage.education;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Education {
 	
 	@Id
-	private long id;
+	private int id;
+	@Size(min=5,message="Enter atleast 5 characters")
 	private String due_year;
+	@Size(min=10,message="Enter atleast 10 characters")
 	private String course_stream;
+	@Size(min=5,message="Enter atleast 5 characters")
 	private String institution;
+	@Size(min=5,message="Enter atleast 5 characters")
 	private String place_institution;
+	@Size(min=10,message="Enter atleast 10 characters")
 	private String description;
 	
 	public Education()
 	{
 		
 	}
-	public Education(long id, String due_year, String course_stream, String institution, String place_institution,
+	public Education(int id, String due_year, String course_stream, String institution, String place_institution,
 			String description) {
 		super();
 		this.id = id;
@@ -28,10 +34,10 @@ public class Education {
 		this.place_institution = place_institution;
 		this.description = description;
 	}
-	public long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getDue_year() {
